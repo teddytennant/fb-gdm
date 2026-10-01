@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fb-gdm"
+version = "0.1.0"
+description = "Free-energy Bayesian Gradient Descent Method (FB-GDM) reverse step"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Teddy Tennant", email = "teddytennant@icloud.com"}]
+dependencies = [
+    "jax==0.11.2",
+    "numpy==2.5.3",
+]
+
+[project.optional-dependencies]
+tests = [
+    "pytest==9.1.1",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
